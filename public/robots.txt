@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Sitemap: https://mahmoud-alshame.github.io/sitemap.xml
