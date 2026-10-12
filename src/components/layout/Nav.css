@@ -1,0 +1,61 @@
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20; /* يثبت أعلى الصفحة فوق المحتوى */
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px); /* خلفية شبه شفافة مع ضبابية */
+  border-bottom: 1px solid var(--bd);
+}
+nav .w {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 60px;
+} /* صف أفقي بارتفاع 60px */
+.logo {
+  font:
+    700 19px "JetBrains Mono",
+    monospace;
+  direction: ltr;
+} /* الشعار دائماً من اليسار */
+.logo i {
+  color: var(--ac);
+  font-style: normal;
+} /* حرفا MA بالأخضر */
+.links {
+  display: flex;
+  gap: 18px;
+  flex: 1;
+  font-size: 14px;
+  color: var(--mu);
+  white-space: nowrap;
+} /* flex:1 يدفع الأزرار للطرف */
+.links a {
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+.links a:hover {
+  color: var(--ac);
+}
+.links a:after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 2px;
+  height: 2px; /* الخط السفلي */
+  background: var(--ac);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.links a:hover:after {
+  transform: scaleX(1);
+} /* ينمو عند hover */
+@media (max-width: 760px) {
+  .links {
+    display: none;
+  }
+  .logo {
+    flex: 1;
+  }
+} /* الجوال: نخفي الروابط */

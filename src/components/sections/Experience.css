@@ -1,0 +1,8 @@
+.row { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--bd); transition: background .3s; }
+.row:hover { background: color-mix(in srgb, var(--ac) 7%, transparent); }
+.row h3 { margin: 0; font-size: 17px; font-weight: 600; transition: color .3s; }
+.row:hover h3 { color: var(--ac); }
+.row p { margin: 4px 0 0; color: var(--mu); font-size: 14px; }
+.period { font-size: 13px; } .company { font-size: 14px; }
+.sub { margin: 44px 0 6px; font: 700 22px Amiri, serif; }
+@media (max-width: 760px) { .row { grid-template-columns: 1fr; gap: 6px; } }

@@ -1,0 +1,28 @@
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+  border-radius: 99px;
+  padding: 8px 20px;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.btn:hover {
+  border-color: var(--ac);
+  transform: translateY(-2px);
+}
+.btn.pri {
+  background: var(--ac);
+  border-color: var(--ac);
+  color: var(--on);
+  font-weight: 600;
+} /* الزر الأخضر الرئيسي */
+.btn.pri:hover {
+  box-shadow: 0 10px 22px -10px var(--ac);
+}

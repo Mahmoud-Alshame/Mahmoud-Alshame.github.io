@@ -1,0 +1,23 @@
+/* ألوان الوضع الفاتح (الافتراضي) */
+:root {
+  --bg: #f6f3ea;   /* خلفية الصفحة (كريمي) */
+  --card: #fffdf7; /* خلفية البطاقات */
+  --tx: #15211f;   /* لون النص الأساسي */
+  --mu: #5d6b68;   /* نص ثانوي (باهت) */
+  --ac: #0a8577;   /* اللون الأخضر المميز */
+  --on: #fff;      /* لون النص فوق الأخضر (الأزرار) */
+  --bd: #ddd8c9;   /* لون الحدود */
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);       /* يبعد المحتوى عن النوتش في الآيفون */
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* ويبعده عن شريط الأسفل */
+}
+/* تدرج الوضع الليلي: ألوان داكنة بدرجة خلفية صورتك. يُطبَّق إذا كان جهازك داكناً ولم تختر الفاتح يدوياً */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1014; --card: #111a1f; --tx: #e8f1ef; --mu: #8fa3a0; --ac: #2ee6c8; --on: #04201c; --bd: #21313a;
+  }
+}
+/* نفس الألوان الداكنة عندما يضع useTheme الخاصية data-theme="dark" على الصفحة */
+:root[data-theme="dark"] {
+  --bg: #0a1014; --card: #111a1f; --tx: #e8f1ef; --mu: #8fa3a0; --ac: #2ee6c8; --on: #04201c; --bd: #21313a;
+}

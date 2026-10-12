@@ -1,0 +1,145 @@
+.art {
+  /* الحاوية: تُوضع في طرف الواجهة وتنعكس حسب اللغة بفضل inset-inline-end */
+  --m1: color-mix(in srgb, var(--tx) 18%, var(--bg)); /* لون الإطارات */
+  --m2: color-mix(in srgb, var(--tx) 7%, var(--bg)); /* لون الزجاج */
+  position: absolute;
+  top: -10px;
+  width: min(400px, 44%);
+  inset-inline-end: clamp(-40px, calc((1000px - 100vw) / 2), 22px);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: pop 1s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.art .bz {
+  fill: var(--m1);
+  stroke: var(--bd);
+}
+.art .sc {
+  fill: var(--m2);
+}
+.art .pn {
+  fill: color-mix(in srgb, var(--tx) 9%, transparent);
+  stroke: color-mix(in srgb, var(--tx) 30%, transparent);
+  animation: glow 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--d) * -0.6s);
+}
+.art .fl {
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.art:hover .fl,
+.art.on .fl {
+  transform: translate(calc(var(--d) * -10px), calc(var(--d) * 6px));
+}
+.art .bob {
+  animation: float 4.5s ease-in-out infinite;
+  animation-delay: calc(var(--d) * -1.1s);
+}
+.art .run {
+  fill: none;
+  stroke: var(--ac);
+  stroke-width: 1.5;
+  stroke-dasharray: 14 86;
+  animation: run 3.6s linear infinite;
+  animation-delay: calc(var(--d) * -0.9s);
+}
+.art .sheen {
+  animation: sweep 5s ease-in-out infinite;
+}
+.art .lg,
+.art .halo,
+.art .sp {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.art .lg {
+  transition: transform 0.5s;
+}
+.art:hover .lg,
+.art.on .lg {
+  transform: scale(1.15);
+}
+.art .halo {
+  animation: halo 3s ease-in-out infinite;
+}
+.art .sp {
+  animation: tw 2.6s ease-in-out infinite;
+}
+.art .gem {
+  animation: bob 4s ease-in-out infinite;
+}
+.art:hover .gem {
+  animation-duration: 1.6s;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+@keyframes float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes glow {
+  50% {
+    fill: color-mix(in srgb, var(--ac) 16%, transparent);
+  }
+}
+@keyframes run {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+@keyframes sweep {
+  0% {
+    transform: translateX(0);
+  }
+  65%,
+  100% {
+    transform: translateX(300px);
+  }
+}
+@keyframes halo {
+  50% {
+    transform: scale(1.18);
+    opacity: 0.15;
+  }
+}
+@keyframes tw {
+  0%,
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bob {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 760px) {
+  .art {
+    position: static;
+    width: min(340px, 86%);
+    margin: 34px auto 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .art * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

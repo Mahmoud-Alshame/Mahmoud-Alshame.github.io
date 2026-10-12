@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+} /* العرض يشمل الحشوة والحدود، فتسهل الحسابات */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+} /* تمرير ناعم، ويترك مساحة لشريط التنقل الثابت */
+body {
+  margin: 0; /* نلغي هامش المتصفح */
+  background: var(--bg);
+  color: var(--tx); /* ألوان من theme.css */
+  font:
+    16px/1.8 "IBM Plex Sans Arabic",
+    system-ui,
+    "Segoe UI",
+    Tahoma,
+    sans-serif; /* الخط وارتفاع السطر */
+  transition:
+    background 0.3s,
+    color 0.3s; /* انتقال ناعم عند تبديل الثيم */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+} /* الروابط بلون النص وبدون خط سفلي */
+.w {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 22px;
+} /* حاوية المحتوى: وسطية وبعرض أقصى 1000px */
+.mono {
+  font-family: "JetBrains Mono", monospace;
+  direction: ltr;
+} /* نص الكود دائماً من اليسار */
+.ac {
+  color: var(--ac);
+}
+.mu {
+  color: var(--mu);
+} /* أصناف مساعدة للألوان */
+h1,
+h2 {
+  font-family: Amiri, "Noto Naskh Arabic", serif;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 10px 0 0;
+}
+h2 {
+  font-size: clamp(28px, 4.5vw, 44px);
+} /* يتدرج الحجم حسب عرض الشاشة بين 28 و44 */
+.lbl {
+  font:
+    500 12px "JetBrains Mono",
+    monospace;
+  color: var(--ac);
+  letter-spacing: 0.5px;
+}

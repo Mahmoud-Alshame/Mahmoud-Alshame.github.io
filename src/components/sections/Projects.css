@@ -1,0 +1,13 @@
+.grid .pj { padding: 0; justify-content: flex-start; }
+.pj .cb { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 20px 22px; }
+.pj .lnk { margin: 14px 0 0; }
+.thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; display: grid; place-items: center;
+  color: var(--ac); font-size: 30px; border-bottom: 1px solid var(--bd);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--ac) 28%, var(--bg)), color-mix(in srgb, var(--ac) 6%, var(--bg))); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.thumb span { transition: transform .5s; }
+.card:hover .thumb img { transform: scale(1.08); }
+.card:hover .thumb span { transform: scale(1.2) rotate(-4deg); }
+.thumb:after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); transform: skewX(-20deg); transition: left .8s; }
+.card:hover .thumb:after { left: 130%; }

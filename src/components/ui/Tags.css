@@ -1,0 +1,24 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font:
+    12px "JetBrains Mono",
+    monospace;
+  direction: ltr;
+  color: var(--ac);
+  border: 1px solid color-mix(in srgb, var(--ac) 35%, transparent);
+  border-radius: 99px;
+  padding: 1px 10px;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s;
+}
+.tag:hover {
+  background: var(--ac);
+  color: var(--on);
+  transform: translateY(-2px);
+}

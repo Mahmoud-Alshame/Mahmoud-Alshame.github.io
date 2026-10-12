@@ -1,0 +1,53 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  grid-auto-rows: 1fr;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 22px;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ac);
+  box-shadow: 0 16px 34px -16px color-mix(in srgb, var(--ac) 60%, transparent);
+}
+.card:before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 2px;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, var(--ac), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+.card:hover:before {
+  transform: scaleX(1);
+}
+.grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card h3 {
+  font:
+    700 22px Amiri,
+    serif;
+  margin: 6px 0;
+}
+.card p {
+  color: var(--mu);
+  font-size: 14px;
+  margin: 0 0 12px;
+}

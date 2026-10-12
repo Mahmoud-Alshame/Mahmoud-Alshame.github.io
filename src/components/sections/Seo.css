@@ -1,0 +1,7 @@
+.seo { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+.seo ul { list-style: none; padding: 0; margin: 0; }
+.seo li { padding: 9px 0; border-top: 1px solid var(--bd); font-size: 14px; color: var(--mu); display: flex; gap: 10px; transition: padding .25s, color .25s; }
+.seo li:before { content: "✓"; color: var(--ac); font-weight: 700; transition: transform .25s; }
+.seo li:hover { padding-inline-start: 10px; color: var(--tx); }
+.seo li:hover:before { transform: scale(1.4); }
+@media (max-width: 760px) { .seo { grid-template-columns: 1fr; } }
