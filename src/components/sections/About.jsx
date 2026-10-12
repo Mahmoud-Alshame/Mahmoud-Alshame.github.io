@@ -6,7 +6,7 @@ export default function About({ data }) {
   return (
     <div className="about">
       <div className="photo">
-         <img src={p.photo} alt={p.name} loading="lazy" decoding="async" />   
+         <img src={p.photo} alt={p.name}  width="750" loading="lazy" decoding="async" />   
            <div className="stats">
           {stats.map((s, i) => <div key={i}><Count text={s.n} />{s.l}</div>)}
         </div>
