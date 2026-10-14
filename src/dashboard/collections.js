@@ -3,6 +3,7 @@
 // لإضافة حقل جديد لمشروع مثلاً أضِف سطره هنا فقط (وأضفه في ar.js و en.js)
 export const COLLECTIONS = {
   stats: { title: "الإحصائيات", fields: [["n", "الرقم"], ["l", "الوصف"]] },
+    codeLines: { title: "أسطر الكود في الواجهة", fields: [["k", "الاسم (مثل role)"], ["v", "القيمة"], ["hl", "تمييز بالأخضر (اكتب 1 أو اتركه فارغاً)"]] },
   specs: { title: "التخصصات", fields: [["title", "العنوان"], ["desc", "الوصف", "area"], ["tags", "وسوم (افصل بفاصلة)"]] },
   experience: { title: "الخبرات", fields: [["role", "المسمّى"], ["company", "الشركة"], ["period", "الفترة"], ["desc", "المهام", "area"]] },
   education: { title: "التعليم", fields: [["role", "التخصص"], ["company", "الجهة"], ["period", "السنة"]] },

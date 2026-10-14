@@ -1,8 +1,8 @@
-import "./Hero.css";                 // تنسيق هذا المكوّن (الملف التالي)
-import Workstation from "./Workstation"; // الرسمة المتحركة (نفس المجلد)
+import "./Hero.css";
+import Workstation from "./Workstation";
 
 export default function Hero({ data }) {
-  const { profile: p, ui } = data;   // نأخذ profile باسم p، وui كما هي
+  const { profile: p, ui } = data;
   return (
     <header className="hero" id="top">
       <div className="w">
@@ -13,11 +13,11 @@ export default function Hero({ data }) {
           <a className="btn pri" href="#projects">{ui.browse}</a>
           <a className="btn" href="#contact">{ui.contact}</a>
         </div>
+        {/* أسطر الكود: تُبنى من قائمة codeLines. السطر الذي فيه hl يظهر قيمته بالأخضر */}
         <div className="code mono">
-          role <b>= "front_end + content_team_lead"</b><br />
-          company <b>= "<i>jomla</i>"</b><br />
-          stack <b>= react · tailwind · sass</b><br />
-          status <b>= <i>accepting_new_ideas</i></b>
+          {(data.codeLines || []).map((l, i) => (
+            <div key={i}>{l.k} <b>= "{l.hl ? <i>{l.v}</i> : l.v}"</b></div>
+          ))}
         </div>
         <Workstation />
       </div>

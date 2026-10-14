@@ -25,7 +25,8 @@ export default function Editor({ lang, setLang, theme, toggleTheme, initial, sav
   const setProfile = (k, v) => save({ ...data, profile: { ...data.profile, [k]: v } });
   const setShow = (k, v) => save({ ...data, show: { ...data.show, [k]: v } });
   const setTitle = (k, f, v) => save({ ...data, titles: { ...data.titles, [k]: { ...data.titles[k], [f]: v } } });
-
+  const setFooter = (k, v) => save({ ...data, footer: { ...data.footer, [k]: v } });
+  
   const strip = () =>
     JSON.stringify({ ...data, profile: { ...data.profile, photo: "" }, projects: data.projects.map(({ img, ...p }) => p) }, null, 1); // eslint-disable-line no-unused-vars
   const [txt, setTxt] = useState(strip);
@@ -92,6 +93,14 @@ export default function Editor({ lang, setLang, theme, toggleTheme, initial, sav
           <Field label="نبذة الواجهة" area="area" value={data.profile.heroBio} onChange={(v) => setProfile("heroBio", v)} />
           <Field label="نبذة من أنا" area="area" value={data.profile.about} onChange={(v) => setProfile("about", v)} />
           <Field label="مسار الصورة الشخصية (ملف في public/images)" value={data.profile.photo} onChange={(v) => setProfile("photo", v)} />
+        </details>
+
+                <details className="panel">
+          <summary>التذييل (Footer)</summary>
+          <div className="two">
+            <Field label="النص الأول" value={data.footer?.left} onChange={(v) => setFooter("left", v)} />
+            <Field label="النص الثاني" value={data.footer?.right} onChange={(v) => setFooter("right", v)} />
+          </div>
         </details>
 
         {Object.keys(COLLECTIONS).map((n) => <ListEditor key={n} name={n} data={data} save={save} />)}

@@ -26,7 +26,6 @@ export default function Site({ lang, setLang, theme, toggleTheme }) {
           </Section>
         );
       })}
-      <Footer profile={data.profile} ui={ui} />
-    </>
+     <Footer data={data} />    </>
   );
 }

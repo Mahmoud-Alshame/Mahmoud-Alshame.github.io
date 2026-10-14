@@ -1,11 +1,13 @@
 import "./Footer.css";
 
-export default function Footer({ profile, ui }) {
+// النصان يأتيان من data.footer (قابلان للتعديل من لوحة التحكم)
+export default function Footer({ data }) {
+  const f = data.footer || {};
   return (
     <footer>
       <div className="w">
-        <span>{profile.name} — {profile.company}</span>
-        <span>{ui.built}</span>
+        <span>{f.left}</span>
+        <span>{f.right}</span>
       </div>
     </footer>
   );

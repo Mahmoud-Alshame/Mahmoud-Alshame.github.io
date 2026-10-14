@@ -66,6 +66,16 @@ const ar = {
     { icon: "🔀", group: "التحكم بالإصدارات", items: "Git, GitHub" },
     { icon: "🌐", group: "اللغات", items: "English (Professional), العربية (الأم)" },
   ],
+    // أسطر "الكود" التي تظهر في الواجهة: k الاسم، v القيمة، hl="1" لتمييز القيمة بالأخضر
+  codeLines: [
+    { k: "role", v: "front_end + content_team_lead", hl: "" },
+    { k: "company", v: "jomla", hl: "1" },
+    { k: "stack", v: "react · tailwind · sass", hl: "" },
+    { k: "status", v: "accepting_new_ideas", hl: "1" },
+  ],
+  // نصا التذييل
+  footer: { left: "محمود الشامي — جملة (Jomla)", right: "بُني بـ React · 2026" },
+  
   seoPoints, seoTools, // اختصار لـ seoPoints: seoPoints
 };
 

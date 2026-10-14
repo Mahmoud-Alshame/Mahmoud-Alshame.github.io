@@ -59,6 +59,14 @@ const en = {
     { icon: "🔀", group: "Version Control", items: "Git, GitHub" },
     { icon: "🌐", group: "Languages", items: "English (Professional), Arabic (Native)" },
   ],
+    codeLines: [
+    { k: "role", v: "front_end + content_team_lead", hl: "" },
+    { k: "company", v: "jomla", hl: "1" },
+    { k: "stack", v: "react · tailwind · sass", hl: "" },
+    { k: "status", v: "accepting_new_ideas", hl: "1" },
+  ],
+  footer: { left: "Mahmoud Al-Shame — Jomla", right: "Built with React · 2026" },
+  
   seoPoints, seoTools,
 };
 
